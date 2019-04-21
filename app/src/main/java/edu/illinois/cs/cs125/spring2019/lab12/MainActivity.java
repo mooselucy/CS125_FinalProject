@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public final class MainActivity extends AppCompatActivity {
     /** Default logging tag for messages from the main activity. */
     private static final String TAG = "Lab12:Main";
-
+    private static final String test = "hello";
     /** Request queue for our API requests. */
     private static RequestQueue requestQueue;
 
