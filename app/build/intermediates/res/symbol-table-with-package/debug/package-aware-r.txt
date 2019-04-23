@@ -1048,6 +1048,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addTask
 id alertTitle
 id all
 id always
@@ -1101,6 +1102,8 @@ id ghost_view
 id gone
 id group_divider
 id groups
+id guideline
+id guideline3
 id home
 id homeAsUp
 id icon
@@ -1197,6 +1200,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1270,6 +1274,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_set_up_task
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

@@ -1,5 +1,6 @@
 package edu.illinois.cs.cs125.spring2019.lab12;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,8 +22,7 @@ import org.json.JSONObject;
  */
 public final class MainActivity extends AppCompatActivity {
     /** Default logging tag for messages from the main activity. */
-    private static final String TAG = "Lab12:Main";
-    private static final String test = "hello";
+    private static final String TAG = "Emotion/Task Manager";
     /** Request queue for our API requests. */
     private static RequestQueue requestQueue;
 
@@ -48,6 +48,20 @@ public final class MainActivity extends AppCompatActivity {
                 startAPICall("192.17.96.8");
             }
         });
+
+        //The task_button pulls up new page
+        final android.support.design.widget.FloatingActionButton plus =
+                (android.support.design.widget.FloatingActionButton) findViewById(R.id.addTask);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View add) {
+                openSetTask();
+            }
+        });
+    }
+    public void openSetTask() {
+        Intent intent = new Intent(this, setUpTask.class);
+        startActivity(intent);
     }
 
     /**

@@ -1,4 +1,4 @@
-#Sat Apr 20 19:00:02 CDT 2019
-base.0=/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/transforms/dexMerger/debug/5
+#Sun Apr 21 17:44:54 CDT 2019
+base.0=/Users/lucyzhang/CS125_FinalProject/app/build/intermediates/transforms/dexMerger/debug/5
 path.0=classes.dex
 renamed.0=classes.dex
