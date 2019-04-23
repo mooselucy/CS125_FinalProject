@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,6 +18,11 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Main class for our UI design lab.
@@ -26,6 +32,11 @@ public final class MainActivity extends AppCompatActivity {
     private static final String TAG = "Emotion/Task Manager";
     /** Request queue for our API requests. */
     private static RequestQueue requestQueue;
+    /** TODAYS DATE */
+    private final Calendar c = Calendar.getInstance();
+    private final int year = c.get(Calendar.YEAR);
+    private final int month = c.get(Calendar.MONTH);
+    private final int day = c.get(Calendar.DAY_OF_MONTH);
 
     /**
      * Run when this activity comes to the foreground.
@@ -68,6 +79,33 @@ public final class MainActivity extends AppCompatActivity {
                 openEmotions();
             }
         });
+        //Yesterday and tomro goes back and forth
+        final Button yest = (Button) findViewById(R.id.toYesterday);
+        final Button tomr = (Button) findViewById(R.id.toTomorrow);
+        yest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                yesterday();
+            }
+        });
+        tomr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tomorrow();
+            }
+        });
+        //Set the TODAY date
+        TextView dateView = (TextView) findViewById(R.id.date);
+        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
+
+    }
+    public void yesterday() {
+        TextView dateView = (TextView) findViewById(R.id.date);
+        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day - 1).append("-").append(year).append(" "));
+    }
+    public void tomorrow() {
+        TextView dateView = (TextView) findViewById(R.id.date);
+        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day + 1).append("-").append(year).append(" "));
     }
     public void openEmotions() {
         Intent intent = new Intent(this, emotions.class);
