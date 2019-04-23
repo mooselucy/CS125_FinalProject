@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.emotions" />
         <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.setUpTask" />
         <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.MainActivity" >
             <intent-filter>

@@ -1,4 +1,4 @@
-#Sun Apr 21 17:36:48 CDT 2019
+#Tue Apr 23 14:14:24 CDT 2019
 base.0=/Users/lucyzhang/CS125_FinalProject/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

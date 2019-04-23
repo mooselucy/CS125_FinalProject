@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -41,13 +42,14 @@ public final class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final Button button = (Button) findViewById(R.id.getIP);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startAPICall("192.17.96.8");
-            }
-        });
+//        final Button button = (Button) findViewById(R.id.getIP);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startAPICall("192.17.96.8");
+//            }
+//        });
+
 
         //The task_button pulls up new page
         final android.support.design.widget.FloatingActionButton plus =
@@ -58,6 +60,18 @@ public final class MainActivity extends AppCompatActivity {
                 openSetTask();
             }
         });
+        //When checkbox is clicked, new screen pops up
+        final CheckBox checkClick = (CheckBox) findViewById(R.id.checkBox);
+        checkClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEmotions();
+            }
+        });
+    }
+    public void openEmotions() {
+        Intent intent = new Intent(this, emotions.class);
+        startActivity(intent);
     }
     public void openSetTask() {
         Intent intent = new Intent(this, setUpTask.class);
