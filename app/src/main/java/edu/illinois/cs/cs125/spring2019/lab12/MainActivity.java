@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -53,13 +54,13 @@ public final class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-//        final Button button = (Button) findViewById(R.id.getIP);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startAPICall("192.17.96.8");
-//            }
-//        });
+        final Button button = (Button) findViewById(R.id.APIbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAPICall("192.17.96.8");
+            }
+        });
 
 
         //The task_button pulls up new page
@@ -80,8 +81,8 @@ public final class MainActivity extends AppCompatActivity {
             }
         });
         //Yesterday and tomro goes back and forth
-        final Button yest = (Button) findViewById(R.id.toYesterday);
-        final Button tomr = (Button) findViewById(R.id.toTomorrow);
+        final ImageButton yest = (ImageButton) findViewById(R.id.toYesterday);
+        final ImageButton tomr = (ImageButton) findViewById(R.id.toTomorrow);
         yest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

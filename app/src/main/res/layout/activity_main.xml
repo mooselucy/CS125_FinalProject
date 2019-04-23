@@ -24,13 +24,13 @@
                 android:layout_height="87dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                app:backgroundTint="@android:color/holo_green_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.951"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.973"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:layout_constraintVertical_bias="0.973" />
 
             <TextView
                 android:id="@+id/date"
@@ -43,11 +43,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.039" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/toYesterday"
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"
-                android:text="yest"
+                app:srcCompat="@android:drawable/ic_media_rew"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.256"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -55,11 +55,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.007" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/toTomorrow"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="tmro"
+                app:srcCompat="@android:drawable/ic_media_ff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.756"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -93,6 +93,18 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.104" />
+
+            <Button
+                android:id="@+id/APIbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="API BUTTON"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.052"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.976" />
 
         </android.support.constraint.ConstraintLayout>
 
