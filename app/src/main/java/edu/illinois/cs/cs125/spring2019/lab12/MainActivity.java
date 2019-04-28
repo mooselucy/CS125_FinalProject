@@ -1,6 +1,8 @@
 package edu.illinois.cs.cs125.spring2019.lab12;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +40,8 @@ public final class MainActivity extends AppCompatActivity {
     private final int year = c.get(Calendar.YEAR);
     private final int month = c.get(Calendar.MONTH);
     private final int day = c.get(Calendar.DAY_OF_MONTH);
-
+    public Button taskOne;
+    public SharedPreferences taskOneName;
     /**
      * Run when this activity comes to the foreground.
      *
@@ -80,6 +83,20 @@ public final class MainActivity extends AppCompatActivity {
                 openEmotions();
             }
         });
+        //Edit the TASK ONE
+        taskOne = (Button) findViewById(R.id.editTaskOne);
+        taskOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditTaskOne();
+            }
+        });
+        //if taskone is changed; the title of task changes
+        taskOneName = getSharedPreferences("taskOneID", Context.MODE_PRIVATE);
+        String one = taskOneName.getString("keyOne", "Task One");
+        taskOne.setText(one);
+
+
         //Yesterday and tomro goes back and forth
         final ImageButton yest = (ImageButton) findViewById(R.id.toYesterday);
         final ImageButton tomr = (ImageButton) findViewById(R.id.toTomorrow);
@@ -114,6 +131,10 @@ public final class MainActivity extends AppCompatActivity {
     }
     public void openSetTask() {
         Intent intent = new Intent(this, setUpTask.class);
+        startActivity(intent);
+    }
+    public void openEditTaskOne() {
+        Intent intent = new Intent(this, TaskOne.class);
         startActivity(intent);
     }
 
