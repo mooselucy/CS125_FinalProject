@@ -38,8 +38,8 @@ public final class MainActivity extends AppCompatActivity {
     /** TODAYS DATE */
     private final Calendar c = Calendar.getInstance();
     private final int year = c.get(Calendar.YEAR);
-    private final int month = c.get(Calendar.MONTH);
-    private final int day = c.get(Calendar.DAY_OF_MONTH);
+    private int month = c.get(Calendar.MONTH);
+    private int day = c.get(Calendar.DAY_OF_MONTH);
     private Button taskOne;
     private SharedPreferences taskOneName;
     /**
@@ -83,6 +83,7 @@ public final class MainActivity extends AppCompatActivity {
                 openEmotions();
             }
         });
+
         //Edit the TASK ONE
         taskOne = (Button) findViewById(R.id.editTaskOne);
         taskOne.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +96,9 @@ public final class MainActivity extends AppCompatActivity {
         taskOneName = getSharedPreferences("taskOneID", Context.MODE_PRIVATE);
         String one = taskOneName.getString("keyOne", "Task One");
         taskOne.setText(one);
+
+
+
 
 
         //Yesterday and tomro goes back and forth
@@ -119,11 +123,21 @@ public final class MainActivity extends AppCompatActivity {
     }
     public void yesterday() {
         TextView dateView = (TextView) findViewById(R.id.date);
-        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day - 1).append("-").append(year).append(" "));
+        day = day - 1;
+        if (day > 30) {
+            month = month + 1;
+            day = 1;
+        }
+        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
     public void tomorrow() {
         TextView dateView = (TextView) findViewById(R.id.date);
-        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day + 1).append("-").append(year).append(" "));
+        day = day + 1;
+        if (day > 30) {
+            month = month + 1;
+            day = 1;
+        }
+        dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
     public void openEmotions() {
         Intent intent = new Intent(this, emotions.class);
