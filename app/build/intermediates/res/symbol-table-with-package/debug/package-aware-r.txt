@@ -1070,6 +1070,8 @@ id center_horizontal
 id center_vertical
 id chains
 id checkBox
+id checkBoxThree
+id checkBoxTwo
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1290,9 +1292,12 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_emotions
+layout activity_emotions_three
+layout activity_emotions_two
 layout activity_main
 layout activity_set_up_task
 layout activity_task_one
+layout activity_task_three
 layout activity_task_two
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

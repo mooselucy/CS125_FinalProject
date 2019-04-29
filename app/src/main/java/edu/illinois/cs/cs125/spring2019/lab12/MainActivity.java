@@ -44,6 +44,13 @@ public final class MainActivity extends AppCompatActivity {
     private SharedPreferences taskOneName;
     private Button taskTwo;
     private SharedPreferences taskTwoName;
+    private Button taskThree;
+    private SharedPreferences taskThreeName;
+    private SharedPreferences Color;
+    private SharedPreferences ColorTwo;
+    private SharedPreferences ColorThree;
+
+
     /**
      * Run when this activity comes to the foreground.
      *
@@ -77,12 +84,26 @@ public final class MainActivity extends AppCompatActivity {
                 openSetTask();
             }
         });
-        //When checkbox is clicked, new screen pops up
-        final CheckBox checkClick = (CheckBox) findViewById(R.id.checkBox);
-        checkClick.setOnClickListener(new View.OnClickListener() {
+        //When button is clicked, new screen pops up
+        final Button checkClickOne = (Button) findViewById(R.id.checkBox);
+        checkClickOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openEmotions();
+                openEmotionsOne();
+            }
+        });
+        final Button checkClickTwo = (Button) findViewById(R.id.checkBoxTwo);
+        checkClickTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEmotionsTwo();
+            }
+        });
+        final Button checkClickThree = (Button) findViewById(R.id.checkBoxThree);
+        checkClickThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEmotionsThree();
             }
         });
 
@@ -94,7 +115,6 @@ public final class MainActivity extends AppCompatActivity {
                 openEditTaskOne();
             }
         });
-        //if taskone is changed; the title of task changes
         taskOneName = getSharedPreferences("taskOneID", Context.MODE_PRIVATE);
         String one = taskOneName.getString("keyOne", "Task One");
         taskOne.setText(one);
@@ -107,12 +127,62 @@ public final class MainActivity extends AppCompatActivity {
                 openEditTaskTwo();
             }
         });
-        //if tasktwo is changed; the title of task changes
         taskTwoName = getSharedPreferences("taskTwoID", Context.MODE_PRIVATE);
         String two = taskTwoName.getString("keyTwo", "Task Two");
         taskTwo.setText(two);
 
+        //Edit THE TASK THREE
+        taskThree = (Button) findViewById(R.id.editTaskThree);
+        taskThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditTaskThree();
+            }
+        });
+        taskThreeName = getSharedPreferences("taskThreeID", Context.MODE_PRIVATE);
+        String three = taskThreeName.getString("keyThree", "Task Three");
+        taskThree.setText(three);
 
+        //EmITONS FIRST
+        Color = getSharedPreferences("setColorID", Context.MODE_PRIVATE);
+        String colour = Color.getString("colorKey", null);
+        if (colour.equals("blues")) {
+            taskOne.setBackgroundColor(0xff33b5e5);
+        }
+        if (colour.equals("purples")) {
+            taskOne.setBackgroundColor(0xffaa66cc);
+        }
+        if (colour.equals("greens")) {
+            taskOne.setBackgroundColor(0xff99cc00);
+        }
+        //EmOTIONS TWO
+        ColorTwo = getSharedPreferences("setColorTwoID", Context.MODE_PRIVATE);
+        String colourTwo = ColorTwo.getString("colorKey1", null);
+        if (colourTwo != null) {
+            if (colourTwo.equals("blues")) {
+                taskTwo.setBackgroundColor(0xff33b5e5);
+            }
+            if (colourTwo.equals("purples")) {
+                taskTwo.setBackgroundColor(0xffaa66cc);
+            }
+            if (colourTwo.equals("greens")) {
+                taskTwo.setBackgroundColor(0xff99cc00);
+            }
+        }
+        //Emotions Three
+        ColorThree = getSharedPreferences("setColorThreeID", Context.MODE_PRIVATE);
+        String colourThree = ColorThree.getString("colorKey2", null);
+        if (colourThree != null) {
+            if (colourThree.equals("blues")) {
+                taskThree.setBackgroundColor(0xff33b5e5);
+            }
+            if (colourThree.equals("purples")) {
+                taskThree.setBackgroundColor(0xffaa66cc);
+            }
+            if (colourThree.equals("greens")) {
+                taskThree.setBackgroundColor(0xff99cc00);
+            }
+        }
 
 
 
@@ -154,8 +224,16 @@ public final class MainActivity extends AppCompatActivity {
         }
         dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
-    public void openEmotions() {
+    public void openEmotionsOne() {
         Intent intent = new Intent(this, emotions.class);
+        startActivity(intent);
+    }
+    public void openEmotionsTwo() {
+        Intent intent = new Intent(this, emotionsTwo.class);
+        startActivity(intent);
+    }
+    public void openEmotionsThree() {
+        Intent intent = new Intent(this, emotionsThree.class);
         startActivity(intent);
     }
     public void openSetTask() {
@@ -168,6 +246,10 @@ public final class MainActivity extends AppCompatActivity {
     }
     public void openEditTaskTwo() {
         Intent intent = new Intent(this, TaskTwo.class);
+        startActivity(intent);
+    }
+    public void openEditTaskThree() {
+        Intent intent = new Intent(this, TaskThree.class);
         startActivity(intent);
     }
 

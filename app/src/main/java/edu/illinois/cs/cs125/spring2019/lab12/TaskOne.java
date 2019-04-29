@@ -23,7 +23,6 @@ public class TaskOne extends AppCompatActivity {
         taskOne = (EditText) findViewById(R.id.editTask);
         taskNameOne = getSharedPreferences("taskOneID", MODE_PRIVATE);
 
-        //taskOne.setText(taskNameOne.getString("tag", taskOne.getText().toString()));
         saveButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
