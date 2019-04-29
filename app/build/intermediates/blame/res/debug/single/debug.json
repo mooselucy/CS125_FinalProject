@@ -1880,6 +1880,10 @@
         "source": "/Users/lucyzhang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/f0a2e4aa4a15520e425df9d2140fdd5d/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/lucyzhang/CS125_FinalProject/app/build/intermediates/res/merged/debug/layout_activity_task_two.xml.flat",
+        "source": "/Users/lucyzhang/CS125_FinalProject/app/src/main/res/layout/activity_task_two.xml"
+    },
+    {
         "merged": "/Users/lucyzhang/CS125_FinalProject/app/build/intermediates/res/merged/debug/color_mtrl_chip_text_color.xml.flat",
         "source": "/Users/lucyzhang/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f49d9d795fde0d4ecc9a087ea368a8a7/res/color/mtrl_chip_text_color.xml"
     },

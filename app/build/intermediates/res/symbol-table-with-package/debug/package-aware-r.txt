@@ -1094,6 +1094,8 @@ id direct
 id disableHome
 id editTask
 id editTaskOne
+id editTaskThree
+id editTaskTwo
 id edit_query
 id end
 id enterAlways
@@ -1291,6 +1293,7 @@ layout activity_emotions
 layout activity_main
 layout activity_set_up_task
 layout activity_task_one
+layout activity_task_two
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

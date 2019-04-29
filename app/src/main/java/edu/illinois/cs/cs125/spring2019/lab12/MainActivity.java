@@ -42,6 +42,8 @@ public final class MainActivity extends AppCompatActivity {
     private int day = c.get(Calendar.DAY_OF_MONTH);
     private Button taskOne;
     private SharedPreferences taskOneName;
+    private Button taskTwo;
+    private SharedPreferences taskTwoName;
     /**
      * Run when this activity comes to the foreground.
      *
@@ -97,6 +99,19 @@ public final class MainActivity extends AppCompatActivity {
         String one = taskOneName.getString("keyOne", "Task One");
         taskOne.setText(one);
 
+        //EDIT THE TASK TWO
+        taskTwo = (Button) findViewById(R.id.editTaskTwo);
+        taskTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditTaskTwo();
+            }
+        });
+        //if tasktwo is changed; the title of task changes
+        taskTwoName = getSharedPreferences("taskTwoID", Context.MODE_PRIVATE);
+        String two = taskTwoName.getString("keyTwo", "Task Two");
+        taskTwo.setText(two);
+
 
 
 
@@ -149,6 +164,10 @@ public final class MainActivity extends AppCompatActivity {
     }
     public void openEditTaskOne() {
         Intent intent = new Intent(this, TaskOne.class);
+        startActivity(intent);
+    }
+    public void openEditTaskTwo() {
+        Intent intent = new Intent(this, TaskTwo.class);
         startActivity(intent);
     }
 
