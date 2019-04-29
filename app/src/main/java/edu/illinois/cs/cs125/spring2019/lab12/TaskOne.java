@@ -13,18 +13,17 @@ import android.widget.EditText;
 
 public class TaskOne extends AppCompatActivity {
     private EditText taskOne;
-    private EditText taskInformation;
     private Button saveButt;
-    public static SharedPreferences taskName;
+    public static SharedPreferences taskNameOne;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_one);
         saveButt = (Button) findViewById(R.id.saveButton);
         taskOne = (EditText) findViewById(R.id.editTask);
-        taskName = getSharedPreferences("taskOneID", MODE_PRIVATE);
+        taskNameOne = getSharedPreferences("taskOneID", MODE_PRIVATE);
 
-        taskOne.setText(taskName.getString("tag", taskName.toString()));
+        //taskOne.setText(taskNameOne.getString("tag", taskOne.getText().toString()));
         saveButt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,12 +34,22 @@ public class TaskOne extends AppCompatActivity {
                 goBack();
             }
         });
+        String one = taskNameOne.getString("keyOne", "Task One");
+        taskOne.setText(one);
+        final Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBack();
+            }
+        });
     }
     private void makeTag(String tag){
-        String or = taskName.getString(tag, null);
-        SharedPreferences.Editor preferencesEditor = taskName.edit();
+        String or = taskNameOne.getString(tag, null);
+        SharedPreferences.Editor preferencesEditor = taskNameOne.edit();
         preferencesEditor.putString("keyOne",tag); //change this line to this
         preferencesEditor.commit();
+
     }
     public void goBack() {
         Intent intent = new Intent(this, MainActivity.class);

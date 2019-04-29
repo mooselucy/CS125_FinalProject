@@ -1092,7 +1092,6 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
-id editDetails
 id editTask
 id editTaskOne
 id edit_query

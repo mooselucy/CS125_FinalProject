@@ -40,8 +40,8 @@ public final class MainActivity extends AppCompatActivity {
     private final int year = c.get(Calendar.YEAR);
     private final int month = c.get(Calendar.MONTH);
     private final int day = c.get(Calendar.DAY_OF_MONTH);
-    public Button taskOne;
-    public SharedPreferences taskOneName;
+    private Button taskOne;
+    private SharedPreferences taskOneName;
     /**
      * Run when this activity comes to the foreground.
      *
