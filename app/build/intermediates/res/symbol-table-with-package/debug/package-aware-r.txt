@@ -1007,6 +1007,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable mic
+drawable motivation
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1022,6 +1023,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable quote
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1053,7 +1055,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addTask
 id alertTitle
 id all
 id always
@@ -1070,6 +1071,7 @@ id center_horizontal
 id center_vertical
 id chains
 id checkBox
+id checkBoxFour
 id checkBoxThree
 id checkBoxTwo
 id checkbox
@@ -1095,6 +1097,7 @@ id dimensions
 id direct
 id disableHome
 id editTask
+id editTaskFour
 id editTaskOne
 id editTaskThree
 id editTaskTwo
@@ -1138,6 +1141,7 @@ id masked
 id message
 id middle
 id mini
+id motivationalQuote
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1293,10 +1297,12 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_emotions
+layout activity_emotions_four
 layout activity_emotions_three
 layout activity_emotions_two
 layout activity_main
 layout activity_set_up_task
+layout activity_task_four
 layout activity_task_one
 layout activity_task_three
 layout activity_task_two

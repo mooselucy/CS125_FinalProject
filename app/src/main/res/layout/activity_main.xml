@@ -23,27 +23,13 @@
                 android:id="@+id/checkBoxThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finished!?"
+                android:text="Finished?"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.445" />
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/addTask"
-                android:layout_width="80dp"
-                android:layout_height="87dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                app:backgroundTint="@android:color/holo_green_dark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.951"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.973" />
 
             <TextView
                 android:id="@+id/date"
@@ -88,7 +74,8 @@
                 android:id="@+id/editTaskOne"
                 android:layout_width="265dp"
                 android:layout_height="53dp"
-                android:text="Go for a Run"
+                android:background="?attr/colorButtonNormal"
+                android:text="Task 1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/checkBox"
                 app:layout_constraintHorizontal_bias="0.168"
@@ -101,7 +88,7 @@
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finished!?"
+                android:text="Finished?"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.926"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -113,7 +100,7 @@
                 android:id="@+id/checkBoxTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Finished!?"
+                android:text="Finished?"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -125,7 +112,8 @@
                 android:id="@+id/editTaskTwo"
                 android:layout_width="265dp"
                 android:layout_height="53dp"
-                android:text="Go for a Run2"
+                android:background="?attr/colorButtonNormal"
+                android:text="Task 2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/checkBox"
                 app:layout_constraintHorizontal_bias="0.168"
@@ -138,7 +126,8 @@
                 android:id="@+id/editTaskThree"
                 android:layout_width="265dp"
                 android:layout_height="53dp"
-                android:text="Go for a Run3"
+                android:background="?attr/colorButtonNormal"
+                android:text="Task 3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/checkBox"
                 app:layout_constraintHorizontal_bias="0.168"
@@ -148,16 +137,16 @@
                 app:layout_constraintVertical_bias="0.448" />
 
             <!--<Button-->
-                <!--android:id="@+id/APIbutton"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="API BUTTON"-->
-                <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--app:layout_constraintHorizontal_bias="0.052"-->
-                <!--app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--app:layout_constraintRight_toRightOf="parent"-->
-                <!--app:layout_constraintTop_toTopOf="parent"-->
-                <!--app:layout_constraintVertical_bias="0.976" />-->
+            <!--android:id="@+id/APIbutton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="API BUTTON"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.052"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintVertical_bias="0.976" />-->
 
             <TextView
                 android:id="@+id/textView3"
@@ -173,6 +162,32 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.079" />
+
+            <Button
+                android:id="@+id/editTaskFour"
+                android:layout_width="265dp"
+                android:layout_height="53dp"
+                android:text="Task 4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/checkBox"
+                app:layout_constraintHorizontal_bias="0.168"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.573" />
+
+            <Button
+                android:id="@+id/checkBoxFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finished?"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editTaskFour"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.569" />
 
         </android.support.constraint.ConstraintLayout>
 

@@ -5,37 +5,29 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
  * Main class for our UI design lab.
  */
 public final class MainActivity extends AppCompatActivity {
-    /** Default logging tag for messages from the main activity. */
+    /**
+     * Default logging tag for messages from the main activity.
+     */
     private static final String TAG = "Emotion/Task Manager";
-    /** Request queue for our API requests. */
+    /**
+     * Request queue for our API requests.
+     */
     private static RequestQueue requestQueue;
-    /** TODAYS DATE */
+    /**
+     * TODAYS DATE
+     */
     private final Calendar c = Calendar.getInstance();
     private final int year = c.get(Calendar.YEAR);
     private int month = c.get(Calendar.MONTH);
@@ -46,9 +38,12 @@ public final class MainActivity extends AppCompatActivity {
     private SharedPreferences taskTwoName;
     private Button taskThree;
     private SharedPreferences taskThreeName;
+    private Button taskFour;
+    private SharedPreferences taskFourName;
     private SharedPreferences Color;
     private SharedPreferences ColorTwo;
     private SharedPreferences ColorThree;
+    private SharedPreferences ColorFour;
 
 
     /**
@@ -65,25 +60,15 @@ public final class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
-        //final Button button = (Button) findViewById(R.id.APIbutton);
-        //button.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
-                //startAPICall("192.17.96.8");
-            //}
-        //});
-
-
-        //The task_button pulls up new page
-        final android.support.design.widget.FloatingActionButton plus =
-                (android.support.design.widget.FloatingActionButton) findViewById(R.id.addTask);
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View add) {
-                openSetTask();
-            }
-        });
+//        //The task_button pulls up new page
+//        final android.support.design.widget.FloatingActionButton plus =
+//                (android.support.design.widget.FloatingActionButton) findViewById(R.id.addTask);
+//        plus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View add) {
+//                openSetTask();
+//            }
+//        });
         //When button is clicked, new screen pops up
         final Button checkClickOne = (Button) findViewById(R.id.checkBox);
         checkClickOne.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +91,14 @@ public final class MainActivity extends AppCompatActivity {
                 openEmotionsThree();
             }
         });
+        final Button checkClickFour = (Button) findViewById(R.id.checkBoxFour);
+        checkClickFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEmotionsFour();
+            }
+        });
+
 
         //Edit the TASK ONE
         taskOne = (Button) findViewById(R.id.editTaskOne);
@@ -143,7 +136,19 @@ public final class MainActivity extends AppCompatActivity {
         String three = taskThreeName.getString("keyThree", "Task Three");
         taskThree.setText(three);
 
-        //EmITONS FIRST
+        //Edit THE TASK FOUR
+        taskFour = (Button) findViewById(R.id.editTaskFour);
+        taskFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditTaskFour();
+            }
+        });
+        taskFourName = getSharedPreferences("taskFourID", Context.MODE_PRIVATE);
+        String four = taskFourName.getString("keyFour", "Task Four");
+        taskFour.setText(four);
+
+        //EMOTIONS FIRST
         Color = getSharedPreferences("setColorID", Context.MODE_PRIVATE);
         String colour = Color.getString("colorKey", null);
         if (colour != null) {
@@ -156,7 +161,11 @@ public final class MainActivity extends AppCompatActivity {
             if (colour.equals("greens")) {
                 taskOne.setBackgroundColor(0xff99cc00);
             }
+            if (colour.equals("grey")) {
+                taskOne.setBackgroundColor(0xffd6d7d7);
+            }
         }
+        //0xffd6d7d7 grey color
 
         //EmOTIONS TWO
         ColorTwo = getSharedPreferences("setColorTwoID", Context.MODE_PRIVATE);
@@ -186,7 +195,20 @@ public final class MainActivity extends AppCompatActivity {
                 taskThree.setBackgroundColor(0xff99cc00);
             }
         }
-
+        //Emotions Four
+        ColorFour = getSharedPreferences("setColorFourID", Context.MODE_PRIVATE);
+        String colourFour = ColorFour.getString("colorKey3", null);
+        if (colourFour != null) {
+            if (colourFour.equals("blues")) {
+                taskFour.setBackgroundColor(0xff33b5e5);
+            }
+            if (colourFour.equals("purples")) {
+                taskFour.setBackgroundColor(0xffaa66cc);
+            }
+            if (colourFour.equals("greens")) {
+                taskFour.setBackgroundColor(0xff99cc00);
+            }
+        }
 
 
         //Yesterday and tomro goes back and forth
@@ -209,13 +231,14 @@ public final class MainActivity extends AppCompatActivity {
         dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
 
     }
+
     public void yesterday() {
         TextView dateView = (TextView) findViewById(R.id.date);
         day = day - 1;
         if (day > 30 || day < 1) {
             month = month - 1;
             if (month == 13 || month == 11 || month == 9 || month == 8 || month == 6 || month == 4
-                || month == 2) {
+                    || month == 2) {
                 day = 31;
             } else if (month == 3) {
                 day = 28;
@@ -225,6 +248,7 @@ public final class MainActivity extends AppCompatActivity {
         }
         dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
+
     public void tomorrow() {
         TextView dateView = (TextView) findViewById(R.id.date);
         day = day + 1;
@@ -234,32 +258,49 @@ public final class MainActivity extends AppCompatActivity {
         }
         dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
+
     public void openEmotionsOne() {
         Intent intent = new Intent(this, emotions.class);
         startActivity(intent);
     }
+
     public void openEmotionsTwo() {
         Intent intent = new Intent(this, emotionsTwo.class);
         startActivity(intent);
     }
+
     public void openEmotionsThree() {
         Intent intent = new Intent(this, emotionsThree.class);
         startActivity(intent);
     }
+
+    public void openEmotionsFour() {
+        Intent intent = new Intent(this, emotionsFour.class);
+        startActivity(intent);
+    }
+
     public void openSetTask() {
         Intent intent = new Intent(this, setUpTask.class);
         startActivity(intent);
     }
+
     public void openEditTaskOne() {
         Intent intent = new Intent(this, TaskOne.class);
         startActivity(intent);
     }
+
     public void openEditTaskTwo() {
         Intent intent = new Intent(this, TaskTwo.class);
         startActivity(intent);
     }
+
     public void openEditTaskThree() {
         Intent intent = new Intent(this, TaskThree.class);
+        startActivity(intent);
+    }
+
+    public void openEditTaskFour() {
+        Intent intent = new Intent(this, TaskFour.class);
         startActivity(intent);
     }
 
@@ -270,46 +311,4 @@ public final class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
     }
-//
-//    /**
-//     * Make a call to the IP geolocation API.
-//     *
-//     * @param ipAddress IP address to look up
-//     */
-//    void startAPICall(final String ipAddress) {
-//        try {
-//            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-//                    Request.Method.GET,
-//                    "https://ipinfo.io/" + ipAddress + "/json",
-//                    null,
-//                    new Response.Listener<JSONObject>() {
-//                        @Override
-//                        public void onResponse(final JSONObject response) {
-//                            apiCallDone(response);
-//                        }
-//                    }, new Response.ErrorListener() {
-//                        @Override
-//                        public void onErrorResponse(final VolleyError error) {
-//                            Log.e(TAG, error.toString());
-//                        }
-//                    });
-//            jsonObjectRequest.setShouldCache(false);
-//            requestQueue.add(jsonObjectRequest);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    /**
-//     * Handle the response from our IP geolocation API.
-//     *
-//     * @param response response from our IP geolocation API.
-//     */
-//    void apiCallDone(final JSONObject response) {
-//        try {
-//            Log.d(TAG, response.toString(2));
-//            // Example of how to pull a field off the returned JSON object
-//            Log.i(TAG, response.get("hostname").toString());
-//        } catch (JSONException ignored) { }
-//    }
 }

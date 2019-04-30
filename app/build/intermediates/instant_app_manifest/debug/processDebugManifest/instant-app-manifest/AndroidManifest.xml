@@ -22,6 +22,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.emotionsFour" />
+        <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.TaskFour" />
         <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.TaskThree" />
         <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.emotionsThree" />
         <activity android:name="edu.illinois.cs.cs125.spring2019.lab12.emotionsTwo" />
