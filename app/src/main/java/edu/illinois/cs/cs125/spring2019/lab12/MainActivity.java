@@ -66,13 +66,13 @@ public final class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final Button button = (Button) findViewById(R.id.APIbutton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startAPICall("192.17.96.8");
-            }
-        });
+        //final Button button = (Button) findViewById(R.id.APIbutton);
+        //button.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+                //startAPICall("192.17.96.8");
+            //}
+        //});
 
 
         //The task_button pulls up new page
@@ -270,46 +270,46 @@ public final class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
     }
-
-    /**
-     * Make a call to the IP geolocation API.
-     *
-     * @param ipAddress IP address to look up
-     */
-    void startAPICall(final String ipAddress) {
-        try {
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                    Request.Method.GET,
-                    "https://ipinfo.io/" + ipAddress + "/json",
-                    null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(final JSONObject response) {
-                            apiCallDone(response);
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(final VolleyError error) {
-                            Log.e(TAG, error.toString());
-                        }
-                    });
-            jsonObjectRequest.setShouldCache(false);
-            requestQueue.add(jsonObjectRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Handle the response from our IP geolocation API.
-     *
-     * @param response response from our IP geolocation API.
-     */
-    void apiCallDone(final JSONObject response) {
-        try {
-            Log.d(TAG, response.toString(2));
-            // Example of how to pull a field off the returned JSON object
-            Log.i(TAG, response.get("hostname").toString());
-        } catch (JSONException ignored) { }
-    }
+//
+//    /**
+//     * Make a call to the IP geolocation API.
+//     *
+//     * @param ipAddress IP address to look up
+//     */
+//    void startAPICall(final String ipAddress) {
+//        try {
+//            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+//                    Request.Method.GET,
+//                    "https://ipinfo.io/" + ipAddress + "/json",
+//                    null,
+//                    new Response.Listener<JSONObject>() {
+//                        @Override
+//                        public void onResponse(final JSONObject response) {
+//                            apiCallDone(response);
+//                        }
+//                    }, new Response.ErrorListener() {
+//                        @Override
+//                        public void onErrorResponse(final VolleyError error) {
+//                            Log.e(TAG, error.toString());
+//                        }
+//                    });
+//            jsonObjectRequest.setShouldCache(false);
+//            requestQueue.add(jsonObjectRequest);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    /**
+//     * Handle the response from our IP geolocation API.
+//     *
+//     * @param response response from our IP geolocation API.
+//     */
+//    void apiCallDone(final JSONObject response) {
+//        try {
+//            Log.d(TAG, response.toString(2));
+//            // Example of how to pull a field off the returned JSON object
+//            Log.i(TAG, response.get("hostname").toString());
+//        } catch (JSONException ignored) { }
+//    }
 }

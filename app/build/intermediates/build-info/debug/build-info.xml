@@ -5,26 +5,51 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.3.0"
-    timestamp="1556633903512"
+    timestamp="1556637150099"
     token="4506833248439543208"
-    verifier="CLASS_ADDED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="955" />
+        duration="1341" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="78" />
+        duration="126" />
     <task
         name="verifier"
-        duration="14" />
+        duration="62" />
 
     <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
         location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
         type="SPLIT" />
 
     <build
@@ -74,10 +99,35 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1556633903512"
-        verifier="CLASS_ADDED" >
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1556637150099"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
         <artifact
             location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/randywtang/AndroidStudioProjects/CS125_FinalProject/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
     </build>
 
