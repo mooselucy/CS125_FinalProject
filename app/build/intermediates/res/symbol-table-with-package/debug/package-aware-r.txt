@@ -1006,6 +1006,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable mic
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1159,6 +1160,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id recordVoice
 id right
 id right_icon
 id right_side
@@ -1216,6 +1218,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
 id textView3
 id text_input_password_toggle
 id textinput_counter

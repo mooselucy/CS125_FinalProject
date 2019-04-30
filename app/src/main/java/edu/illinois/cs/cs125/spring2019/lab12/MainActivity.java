@@ -146,15 +146,18 @@ public final class MainActivity extends AppCompatActivity {
         //EmITONS FIRST
         Color = getSharedPreferences("setColorID", Context.MODE_PRIVATE);
         String colour = Color.getString("colorKey", null);
-        if (colour.equals("blues")) {
-            taskOne.setBackgroundColor(0xff33b5e5);
+        if (colour != null) {
+            if (colour.equals("blues")) {
+                taskOne.setBackgroundColor(0xff33b5e5);
+            }
+            if (colour.equals("purples")) {
+                taskOne.setBackgroundColor(0xffaa66cc);
+            }
+            if (colour.equals("greens")) {
+                taskOne.setBackgroundColor(0xff99cc00);
+            }
         }
-        if (colour.equals("purples")) {
-            taskOne.setBackgroundColor(0xffaa66cc);
-        }
-        if (colour.equals("greens")) {
-            taskOne.setBackgroundColor(0xff99cc00);
-        }
+
         //EmOTIONS TWO
         ColorTwo = getSharedPreferences("setColorTwoID", Context.MODE_PRIVATE);
         String colourTwo = ColorTwo.getString("colorKey1", null);
@@ -209,16 +212,23 @@ public final class MainActivity extends AppCompatActivity {
     public void yesterday() {
         TextView dateView = (TextView) findViewById(R.id.date);
         day = day - 1;
-        if (day > 30) {
-            month = month + 1;
-            day = 1;
+        if (day > 30 || day < 1) {
+            month = month - 1;
+            if (month == 13 || month == 11 || month == 9 || month == 8 || month == 6 || month == 4
+                || month == 2) {
+                day = 31;
+            } else if (month == 3) {
+                day = 28;
+            } else {
+                day = 30;
+            }
         }
         dateView.setText(new StringBuilder().append(month + 1).append("-").append(day).append("-").append(year).append(" "));
     }
     public void tomorrow() {
         TextView dateView = (TextView) findViewById(R.id.date);
         day = day + 1;
-        if (day > 30) {
+        if (day > 30 || day < 1) {
             month = month + 1;
             day = 1;
         }
